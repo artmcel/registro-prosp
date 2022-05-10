@@ -12,12 +12,12 @@ const plugins = [
     new HtmlWebPackPlugin({
         template: './src/index.html',
         filename: './index.html',
-        chunks : ['index', 'logo']
+        chunks : ['index']
     }),
     new HtmlWebPackPlugin({
         template: './src/registro.html',
         filename: './registro.html',
-        chunks : ['registro', 'logo']
+        chunks : ['registro']
     }),
 ];
 
@@ -34,8 +34,7 @@ module.exports = {
     entry : {
 
         index: './src/index.js',
-        registro : './src/js/registro.js',
-        logo : './src/js/logo.js'
+        registro : './src/js/registro.js'
 
     },
     module: {
