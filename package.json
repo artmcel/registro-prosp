@@ -1,7 +1,7 @@
 {
-  "name": "prospectacion",
-  "version": "3.0.0",
-  "description": "proyecto de prospectacion unimex",
+  "name": "landings",
+  "version": "1.0.0",
+  "description": "proyecto de landigns unimex",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
