@@ -1,1 +1,39 @@
 /* Este es el estilo del main */
+:root{
+    --naranja-unimex: #f8981d;
+    --azul-unimex : #004b93;
+    --fondo-gris: #eef1f3;
+}
+
+#formulario{
+    max-width: 350px;
+    height: auto;
+}
+
+.shadow2 {
+    box-shadow: -2.5rem 0rem 2rem -3rem rgba(0,0,0,.15)!important;
+}
+
+.form-label{
+    color: var(--azul-unimex);
+}
+
+.form-control, .form-select{
+    background-color: var(--fondo-gris) !important;
+    border: none !important;
+
+}
+
+p{
+    text-align: center;
+}
+
+a{
+    color: var(--azul-unimex) !important;
+    text-decoration: none !important;
+}
+
+#boton{
+    border-color: var(--naranja-unimex);
+    background-color: var(--naranja-unimex);
+}
