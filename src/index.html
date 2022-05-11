@@ -11,17 +11,30 @@
     <main class="container">
 
         <form id="formulario" class="shadow2 p-3 mb-5 mt-5 bg-body rounded float-end" action="">
-            <div class="mb-3">
-                <label for="nombre" class="form-label">NOMBRE</label>
-                <input id="nombre" type="text" class="form-control" placeholder="Nombre / Apellidos" aria-label="Last name">
+            <div class="row mb-3">
+                <label for="" class="form-label">NOMBRE</label>
+                <div class="col-4">
+                  <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
+                </div>
+                <div class="col-4">
+                  <input id="apaterno" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Last name">
+                </div>
+                <div class="col-4">
+                  <input id="amaterno" type="text" class="form-control" placeholder="Apellido Materno" aria-label="Last name">
+                </div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">EMAIL</label>
                 <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Last name">
             </div>
-            <div class="mb-3">
-                <label for="telefono" class="form-label">TELEFONO DE CONTACTO</label>
-                <input id="telefono" type="text" class="form-control" placeholder="Celular / Casa" aria-label="Last name">
+            <div class="row mb-3">
+                <label for="telefono" class="form-label">TELEFONOS DE CONTACTO</label>
+                <div class="col-6">
+                  <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name">
+                </div>
+                <div class="col-6">
+                  <input id="celular" type="text" class="form-control" placeholder="Celular" aria-label="Last name">
+                </div>
             </div>
             <div class="row mb-3">
                 <label for="" class="form-label">QUIERO ESTUDIAR EN</label>
@@ -31,17 +44,25 @@
                   </select>
                 </div>
                 <div class="col-6">
-                  <select class="form-select" aria-label="" id="nivel"></select>
+                  <select class="form-select" aria-label="" id="nivel">
+                    <option value="0">NIVEL</option>
+                  </select>
                 </div>
             </div>
             <div class="mb-3">
-              <select class="form-select" aria-label="" id="periodo"></select>
+              <select class="form-select" aria-label="" id="periodo">
+                <option value="0">INICIAR CLASES EN:</option>
+              </select>
             </div>
             <div class="mb-3">
-              <select class="form-select" aria-label="" id="carrera"></select>
+              <select class="form-select" aria-label="" id="carrera">
+                <option value="0">CARRERA</option>
+              </select>
             </div>
             <div class="mb-3">
-              <select class="form-select" aria-label="" id="horario"></select>
+              <select class="form-select" aria-label="" id="horario">
+                <option value="0">HORARIO</option>
+              </select>
             </div>
             <div id="aviso" class="d-grid gap-2 col-6 mx-auto mb-3">
                 <p class="">He leido y acepto el <a href="https://unimex.edu.mx/aviso-privacidad" target="_blank" rel="noopener noreferrer">aviso de privacidad</a></p>
