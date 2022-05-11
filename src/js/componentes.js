@@ -40,6 +40,7 @@ window.addEventListener('load', () => {
     //console.log(cookies);
     //llamamos a la funcion para cargar los niveles...
     agregaNivelSelect(selectPlanteles.value);
+    agregaPeriodoSelect(selectPlanteles.value);
 
 });
 
@@ -56,9 +57,28 @@ const agregaNivelSelect = async (idPlantel) => {
         niveles.then(nivel => {
 
             //console.log(nivel);
-
+            
             for (let { clave, descrip } of nivel) {
                 selectNiveles.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+            }
+            
+
+        });
+    });
+
+}
+
+const agregaPeriodoSelect = async (idPlantel) => {
+
+    await peticiones.then(module => {
+
+        const periodo = module.obtenerPeriodos(idPlantel);
+        periodo.then(periodo => {
+
+            //console.log(nivel);
+
+            for (let { clave, descrip } of periodo) {
+                selectPeriodos.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
             }
 
         });
