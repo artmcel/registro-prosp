@@ -6,7 +6,7 @@
 import './styles.css';
 //import bootsrap si lo necesitas
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './js/componentes.js';
+//import './js/componentes.js';
  
  //cargadinamica ejemplo:
  //const mostrarMensaje = () => import( /* webpackChunkName: "peticiones" */ './services/peticiones' );
