@@ -21,10 +21,7 @@ const obtenerPlanteles = async () => {
 
 const obtenerNiveles = async ( plantel ) => {
 
-    const respuesta = await fetch(`${url}?niveles`, {
-        method: 'POST',
-        body: JSON.stringify({plantel})
-    });
+    const respuesta = await fetch(`${url}?obtener=niveles&idPlantel=${plantel}`);
 
     if(!respuesta) throw 'No se pudo obtener los niveles';
 
@@ -33,9 +30,24 @@ const obtenerNiveles = async ( plantel ) => {
     return niveles;
 }
 
+const obtenerPeriodos = async ( plantel ) => {
+
+    const respuesta = await fetch(`${url}?periodos`, {
+        method: 'POST',
+        body: JSON.stringify({plantel})
+    });
+
+    if(!respuesta) throw 'No se pudo obtener los niveles';
+
+    const periodos = await respuesta.json();
+    //console.log(niveles);
+    return periodos;
+}
+
 
 
 export {
     obtenerPlanteles,
-    obtenerNiveles
+    obtenerNiveles,
+    obtenerPeriodos
 }
