@@ -7,6 +7,7 @@
  */
 
 const peticiones      = import( /* webpackChunkName: "peticiones" */ './services/peticiones'),
+      Swal            = import(/*webpackPrefetch: true*/ 'sweetalert2'),
       boton           = document.getElementById('boton'),
       inputs          = document.querySelectorAll('input'),
       selects         = document.querySelectorAll('select'),
@@ -199,10 +200,6 @@ const agregarHorarioSelect = async( idCarrera, idNivel, idPeriodo, idPlantel ) =
     })
 }
 
-
-
-
-
 /**
  * 
  * logica del envio de informacion
@@ -216,7 +213,8 @@ boton.addEventListener('click', (e) => {
     // obtener informacion de los inputs..
     inputs.forEach(({ id, value }) => {
 
-        if (!value) throw 'Todos los campos son obligatorios';
+        if (!value) throw alerta(id);
+        e.preventDefault();
 
         datos = { ...datos, [id]: value };
 
@@ -226,6 +224,8 @@ boton.addEventListener('click', (e) => {
     selects.forEach(({ id, value }) => {
 
         //if(!value) throw 'Todos los campos son obligatorios';
+        if (value === '0') throw alerta(id);
+        e.preventDefault();
 
         datos = { ...datos, [id]: value };
 
@@ -255,5 +255,28 @@ const enviarDatos = async ( datos ) => {
 
         });
     });
+
+}
+
+/**
+ * funcion de alerta de error o campos vacios
+ */
+
+const alerta = ( datoVacio ) => {
+
+    Swal.then( module =>{
+
+        const alerta = module.default;
+        alerta.fire({
+            title: 'Error',
+            icon: 'error',
+            text: `El campo ${datoVacio} es obligatorio`,
+        });
+        return false;
+
+    });
+
+
+
 
 }
