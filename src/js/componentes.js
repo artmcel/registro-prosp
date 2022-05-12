@@ -134,6 +134,46 @@ const agregaCarreraSelect = async( idNivel, idPeriodo, idPlantel) => {
 
 }
 
+selectCarrera.addEventListener('change', (e) => {
+    
+    if( e.target.value >= '0' ){
+        selectHorario.innerHTML = '<option value="0">HORARIO</option>';
+    }
+    agregarHorarioSelect(selectCarrera.value, selectNiveles.value, selectPeriodos.value, selectPlanteles.value);
+});
+
+const agregarHorarioSelect = async( idCarrera, idNivel, idPeriodo, idPlantel ) => {
+
+    if(idCarrera === '0' || idNivel === '0' || idPeriodo === '0') throw 'No seleccionaste carrera';
+
+    await peticiones.then(module => {
+        const horario = module.obtenerHorarios(idCarrera, idNivel, idPeriodo, idPlantel);
+        horario.then( horario => {
+
+            //console.log(horario.length);
+
+            if(horario.length){
+                for (let { clave, descrip } of horario) {
+                    //console.log(clave, descrip);
+                    selectHorario.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+                    
+                }
+            }
+            
+            if(horario.length === undefined) {
+
+                for (let { clave, descrip } of [horario]) {
+                    //console.log(clave, descrip);
+                    selectHorario.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+                }
+
+            }
+
+            
+        });
+    })
+}
+
 
 
 
