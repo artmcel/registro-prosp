@@ -271,10 +271,12 @@ const alerta = ( datoVacio ) => {
             title: 'Error',
             icon: 'error',
             text: `El campo ${datoVacio} es obligatorio`,
+            confirmButtonColor: '#004b93',
         });
         return false;
 
     });
+
 
 
 
