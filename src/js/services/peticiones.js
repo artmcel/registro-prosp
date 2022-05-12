@@ -53,11 +53,23 @@ const obtenerCarreras = async ( nivel, periodo, plantel ) => {
 
 }
 
+const obtenerHorarios = async ( carrera, nivel, periodo, plantel ) => {
+
+    const respuesta = await fetch(`${url}?obtener=horarios&&idCarrera=${carrera}&idNivel=${nivel}&idPeriodo=${periodo}&idPlantel=${plantel}`);
+
+    if(!respuesta) throw 'No se pudo obtener los niveles';
+
+    const horarios = await respuesta.json();
+    return horarios;
+
+};
+
 
 
 export {
     obtenerPlanteles,
     obtenerNiveles,
     obtenerPeriodos,
-    obtenerCarreras
+    obtenerCarreras,
+    obtenerHorarios
 }
