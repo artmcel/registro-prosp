@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
     //console.log(cookies);
     //llamamos a la funcion para cargar los niveles...
     agregaNivelSelect(selectPlanteles.value);
-    agregaPeriodoSelect(selectPlanteles.value);
+    //agregaPeriodoSelect(selectPlanteles.value);
 
 });
 
@@ -68,7 +68,23 @@ const agregaNivelSelect = async (idPlantel) => {
 
 }
 
-const agregaPeriodoSelect = async (idPlantel) => {
+selectNiveles.addEventListener('change', (e) => {
+
+    if( e.target.value >= '0' ){
+
+        selectPeriodos.innerHTML = '<option value="0">INICIAR CLASES EN:</option>';
+        selectCarrera.innerHTML = '<option value="0">CARRERA</option>';
+        selectHorario.innerHTML = '<option value="0">HORARIO</option>';
+
+    }
+
+    //console.log( selectPeriodos.value );
+    agregaPeriodoSelect(selectPlanteles.value, selectNiveles.value);
+})
+
+const agregaPeriodoSelect = async (idPlantel, idNivel) => {
+
+    if(idNivel === '0') throw 'No seleccionaste nivel';
 
     await peticiones.then(module => {
 
@@ -80,6 +96,38 @@ const agregaPeriodoSelect = async (idPlantel) => {
             for (let { clave, descrip } of periodo) {
                 selectPeriodos.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
             }
+
+        });
+    });
+
+}
+
+selectPeriodos.addEventListener('change', (e) => {
+
+    if( e.target.value >= '0' ){
+
+        selectCarrera.innerHTML = '<option value="0">CARRERA</option>';
+        selectHorario.innerHTML = '<option value="0">HORARIO</option>';
+
+    }
+    agregaCarreraSelect(selectNiveles.value, selectPeriodos.value, selectPlanteles.value);
+})
+
+const agregaCarreraSelect = async( idNivel, idPeriodo, idPlantel) => {
+
+    if(idPeriodo === '0' || idNivel === '0') throw 'No seleccionaste periodo';
+
+    await peticiones.then(module => {
+
+        const carreras = module.obtenerCarreras(idNivel, idPeriodo, idPlantel);
+        carreras.then(carrera => {
+
+            //console.log(carrera);
+            
+            for (let { clave, descrip } of carrera) {
+                selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+            }
+            
 
         });
     });
