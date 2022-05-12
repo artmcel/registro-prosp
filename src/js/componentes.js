@@ -6,17 +6,15 @@
  * constantes...
  */
 
-const peticiones = import( /* webpackChunkName: "peticiones" */ './services/peticiones'),
-    boton = document.getElementById('boton'),
-    inputs = document.querySelectorAll('input'),
-    selects = document.querySelectorAll('select'),
-    selectPlanteles = document.getElementById('plantel'),
-    selectNiveles = document.getElementById('nivel'),
-    selectPeriodos = document.getElementById('periodo'),
-    selectCarrera = document.getElementById('carrera'),
-    selectHorario = document.getElementById('horario')
-
-    ;
+const peticiones      = import( /* webpackChunkName: "peticiones" */ './services/peticiones'),
+      boton           = document.getElementById('boton'),
+      inputs          = document.querySelectorAll('input'),
+      selects         = document.querySelectorAll('select'),
+      selectPlanteles = document.getElementById('plantel'),
+      selectNiveles   = document.getElementById('nivel'),
+      selectPeriodos  = document.getElementById('periodo'),
+      selectCarrera   = document.getElementById('carrera'),
+      selectHorario   = document.getElementById('horario');
 
 //objeto para guardar los datos del formulario
 let datos = {};
@@ -117,18 +115,45 @@ const agregaCarreraSelect = async( idNivel, idPeriodo, idPlantel) => {
 
     if(idPeriodo === '0' || idNivel === '0') throw 'No seleccionaste periodo';
 
+    let idModo = '';
+
+    /**
+     * Para la landig de sua se utlizara el modo 2 para obtener las carreras
+     * para todos los demas se usara el modo 0
+     */
+
+    idPlantel === '5' ? idModo = '2' : idModo = '0';
+
+
     await peticiones.then(module => {
 
-        const carreras = module.obtenerCarreras(idNivel, idPeriodo, idPlantel);
+        const carreras = module.obtenerCarreras(idModo, idNivel, idPeriodo, idPlantel);
         carreras.then(carrera => {
 
-            //console.log(carrera);
-            
-            for (let { clave, descrip } of carrera) {
-                selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+            console.log(carrera);
+            if(!carrera) {
+                
+                selectCarrera.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay carreras disponibles</option>`);
+                selectHorario.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay horarios disponibles</option>`);
+
+            }
+
+            if(carrera.length){
+                for (let { clave, descrip } of carrera) {
+                    //console.log(clave, descrip);
+                    selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+                    
+                }
             }
             
+            if(carrera.length === undefined) {
 
+                for (let { clave, descrip } of [carrera]) {
+                    //console.log(clave, descrip);
+                    selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+                }
+
+            }
         });
     });
 
