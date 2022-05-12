@@ -130,7 +130,7 @@ const agregaCarreraSelect = async( idNivel, idPeriodo, idPlantel) => {
         const carreras = module.obtenerCarreras(idModo, idNivel, idPeriodo, idPlantel);
         carreras.then(carrera => {
 
-            console.log(carrera);
+            //console.log(carrera);
             if(!carrera) {
                 
                 selectCarrera.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay carreras disponibles</option>`);
