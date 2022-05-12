@@ -41,9 +41,9 @@ const obtenerPeriodos = async ( plantel ) => {
     return periodos;
 }
 
-const obtenerCarreras = async ( nivel, periodo, plantel ) => {
+const obtenerCarreras = async ( modo, nivel, periodo, plantel ) => {
 
-    const respuesta = await fetch(`${url}?obtener=carreras&&idNivel=${nivel}&idPeriodo=${periodo}&idPlantel=${plantel}`);
+    const respuesta = await fetch(`${url}?obtener=carreras&idModo=${modo}&idNivel=${nivel}&idPeriodo=${periodo}&idPlantel=${plantel}`);
 
     if(!respuesta) throw 'No se pudo obtener los niveles';
 
