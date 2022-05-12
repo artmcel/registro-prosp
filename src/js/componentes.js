@@ -231,9 +231,29 @@ boton.addEventListener('click', (e) => {
 
     });
 
-    console.log(datos);
-
-
-
+    
+    //console.log(datos);
+    
+    
+    enviarDatos(datos);
+    
+    
 });
 
+
+const enviarDatos = async ( datos ) => {
+    
+    await peticiones.then(module => {
+        const respuesta = module.guardarDatos(datos);
+        
+        respuesta.then( respuesta => {
+
+            const { FolioCRM } = respuesta;
+
+            if(!FolioCRM) throw 'No se pudo guardar los datos';
+            console.log(FolioCRM);
+
+        });
+    });
+
+}
