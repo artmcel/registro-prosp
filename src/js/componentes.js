@@ -8,6 +8,7 @@
 
 const peticiones      = import( /* webpackChunkName: "peticiones" */ './services/peticiones'),
       Swal            = import(/*webpackPrefetch: true*/ 'sweetalert2'),
+      contenido       = import( /* webpackChunkName: "contenido" */ './contenido'),
       boton           = document.getElementById('boton'),
       inputs          = document.querySelectorAll('input'),
       selects         = document.querySelectorAll('select'),
@@ -41,7 +42,29 @@ window.addEventListener('load', () => {
     agregaNivelSelect(selectPlanteles.value);
     //agregaPeriodoSelect(selectPlanteles.value);
 
+    let plantel = 'izcalli';
+
+    agregarContenido( plantel );
+
 });
+
+/**
+ * function para insertar el contenido desde el objeto contenido en ./js/contenido.js...
+ */
+
+const agregarContenido = ( plantel )=>{
+
+    if(!plantel) throw 'no hay plantel';
+
+    contenido.then(module => {
+
+        const content = module.obtenerContenidoPlantel(plantel);
+
+        document.getElementById('titulo1').innerText = content.tituloPrincipal1;
+        document.getElementById('titulo2').innerText = content.tituloPrincipal2;
+    });
+
+};
 
 /**
  * 
