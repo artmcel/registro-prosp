@@ -62,6 +62,26 @@ const agregarContenido = ( plantel )=>{
 
         document.getElementById('titulo1').innerText = content.tituloPrincipal1;
         document.getElementById('titulo2').innerText = content.tituloPrincipal2;
+        document.getElementById('nombre-plantel').innerText = `PLANTEL ${content.plantel}`;
+        document.getElementById('ubicacion-plantel').innerText = content.ubicacion;
+        document.getElementById('tit1').innerText = content.titulo1;
+        document.getElementById('tit2').innerText = content.titulo2;
+        document.getElementById('tit3').innerText = content.titulo3;
+
+        for( let carrera in content.ofertaAcademica[0] ){
+
+            let lista1 = document.getElementById('bloque1');
+
+            lista1.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
+        }
+
+        for( let carrera in content.ofertaAcademica[1] ){
+
+            let lista2 = document.getElementById('bloque2');
+
+            lista2.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
+        }
+
     });
 
 };
