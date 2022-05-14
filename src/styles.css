@@ -1,11 +1,80 @@
 /* Este es el estilo del main */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 :root{
     --naranja-unimex: #f8981d;
     --azul-unimex : #004b93;
     --fondo-gris: #eef1f3;
 }
 
-#formulario{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container > section {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    color: var(--azul-unimex);
+
+}
+
+header > #logo > a > img{
+    max-width: 90px;
+    max-height: 90px;
+}
+
+#logo{
+    width: 100px;
+    height: 150px;
+    background-color: var(--azul-unimex);
+    border-radius: 0px 0px 10px 10px;
+    margin-left: 15px;
+}
+
+#row-navbar{
+    display: contents;
+}
+
+#row-navbar > .col-7{
+    line-height: 50px;
+}
+
+.col-5{
+    width: 100% !important;
+}
+
+#contacto{
+    font-size: 10px;
+}
+
+/*section registro*/
+
+#registro > #mensaje > #titulo1 {
+
+    color: var(--azul-unimex);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#registro > #mensaje > #titulo2 {
+    color: var(--naranja-unimex);
+    display: flex;
+    align-items: center;
+}
+
+#registro > #formulario{
     max-width: 350px;
     height: auto;
 }
@@ -37,3 +106,104 @@ a{
     border-color: var(--naranja-unimex);
     background-color: var(--naranja-unimex);
 }
+
+/*section informacion*/
+
+#informacion > #ubicacion{
+    background-color: var(--azul-unimex);
+    color: white;
+    border-radius: 30px 30px 30px 30px;
+    padding: 30px;
+}
+
+#informacion > #ubicacion > #icono-ubicacion{
+    width: 35px;
+    height: 50px;
+    background-color:  var(--naranja-unimex);
+    color: white;
+    border-radius: 30px 30px 30px 30px;
+    font-size: 25px;
+    margin-top: -54px;
+    margin-left: -30px;
+    text-align: center;
+    padding: 5px;
+}
+
+#informacion > #ubicacion > p{
+    text-align: left;
+}
+
+#informacion > #turnos{
+    text-align: center;
+    margin-left: -12px;
+}
+
+#informacion > #turnos > p {
+    color: var(--azul-unimex);
+    font-weight: bold;
+}
+
+#informacion > #turnos > div{
+    color: white;
+    background-color: var(--naranja-unimex);
+    border-radius: 0px 20px 20px 0px;
+    text-align: center;
+}
+
+#informacion > #turnos > div > ul > li{
+    width: fit-content;
+}
+
+/* section promocion */
+#promocion{
+    width: 100%;
+}
+
+#promocion > #tit1{
+    color: var(--azul-unimex);
+    font-weight: bold;
+}
+#promocion > #tit2{
+    color: var(--naranja-unimex);
+    font-weight: bold;
+}
+#promocion > #tit3{
+    color: var(--naranja-unimex);
+}
+
+#oferta > #titulo-oferta{
+    background-color: var(--naranja-unimex);
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    width: fit-content;
+    padding: 5px;
+}
+
+
+
+
+#row-oferta{
+    background-color: var(--fondo-gris);
+    width: 100%;
+}
+
+#slider > div{
+    width: fit-content;
+}
+
+#slider > div > h2 {
+    border-bottom: var(--naranja-unimex) solid 2px;
+}
+
+
+/*footer*/
+footer{
+    text-align: center;
+    color: white;
+    background-color: var(--azul-unimex);
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+
+}
+
