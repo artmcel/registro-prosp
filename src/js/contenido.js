@@ -1,4 +1,4 @@
-export const contenido = [
+const contenido = [
     {
         "izcalli" : {
             "tituloPrincipal1": "TITULACIÓN",
@@ -73,3 +73,15 @@ export const contenido = [
         }
     }
 ];
+
+
+/**
+ * funcion para obtener el valor de cada plantel
+ */
+
+export const obtenerContenidoPlantel = ( plantel ) => {
+
+    
+    return contenido[0][plantel];
+
+}            
