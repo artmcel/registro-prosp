@@ -1,27 +1,32 @@
 export const contenido = [
     {
         "izcalli" : {
-            "tituloPrincipal": "TITULACIÓN AUTOMÁTICA",
+            "tituloPrincipal1": "TITULACIÓN",
+            "tituloPrincipal2": "AUTOMÁTICA",
             "ubicacion" : "Av. Del Vidrio No. 15, Col. Plaza Dorada, Centro Urbano (Frente a la FES Cuautitlán) Campo 1, C.P. 54760 Cuautitlán Izcalli, Estado de México",
             "titulo1" : "OBTÉN UNA BECA",
             "titulo2" : " 60% DE DESCUENTO",
             "titulo3" : "EN TURNO MATUTINO",
             "ofertaAcademica" : {
-                "1" : "Administración",
-                "2" : "Administración de Empresas Turísticas",
-                "3" : "Comercio Internacional y Aduanas",
-                "4" : "Comunicación",
-                "5" : "Contaduría Pública",
-                "6" : "Derecho",
-                "7" : "Diseño Gráfico",
-                "8" : "Idiomas",
-                "9" : "Mercadotecnia y Publicidad",
-                "10" : "Psicología Social",
-                "11" : "Relaciones Internacionales y Comercio Exterior",
-                "12" : "Sistemas Computacionales",
-                "13" : "Turismo",
-                "14" : "Informática Administrativa",
-                "15" : "Pedagogía"
+                "bloque1" : {
+                    "1" : "Administración",
+                    "2" : "Administración de Empresas Turísticas",
+                    "3" : "Comercio Internacional y Aduanas",
+                    "4" : "Comunicación",
+                    "5" : "Contaduría Pública",
+                    "6" : "Derecho",
+                    "7" : "Diseño Gráfico",
+                    "8" : "Idiomas",
+                },
+                "bloque2" : {
+                    "9" : "Mercadotecnia y Publicidad",
+                    "10" : "Psicología Social",
+                    "11" : "Relaciones Internacionales y Comercio Exterior",
+                    "12" : "Sistemas Computacionales",
+                    "13" : "Turismo",
+                    "14" : "Informática Administrativa",
+                    "15" : "Pedagogía"
+                },
             },
             "srcFotos" : ""
 
