@@ -1,82 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
 
-    <main class="container">
+  <header class="mb-3">
+    <div id="logo" class="float-start">
+      <a href="https://unimex.edu.mx" target="_blank" rel="noopener noreferrer">
+        <!--<img src="" alt="">-->
+      </a>
+    </div>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <div class="d-flex">
+          <div id="row-navbar" class="row">
+            <div class="col-7">
+              <a href="https://unimex.edu.mx" target="_blank" rel="noopener noreferrer">
+                <span id="contacto">ACERCA DE UNIMEX</span>
+              </a>
+            </div>
+            <div class="col-5 ">
+              <span id="contacto">CONÓCENOS</span><br>
+              <a href="https://" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i>
+              </a>
 
-        <form id="formulario" class="shadow2 p-3 mb-5 mt-5 bg-body rounded float-end" action="">
-            <div class="row mb-3">
-                <label for="" class="form-label">NOMBRE</label>
-                <div class="col-4">
-                  <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
-                </div>
-                <div class="col-4">
-                  <input id="apaterno" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Last name">
-                </div>
-                <div class="col-4">
-                  <input id="amaterno" type="text" class="form-control" placeholder="Apellido Materno" aria-label="Last name">
-                </div>
+              <a href="https://" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+              </a>
+
+              <a href="https://" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-twitter"></i>
+              </a>
+
+              <a href="https://" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+              </a>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">EMAIL</label>
-                <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Last name">
-            </div>
-            <div class="row mb-3">
-                <label for="telefono" class="form-label">TELEFONOS DE CONTACTO</label>
-                <div class="col-6">
-                  <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name">
-                </div>
-                <div class="col-6">
-                  <input id="celular" type="text" class="form-control" placeholder="Celular" aria-label="Last name">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="" class="form-label">QUIERO ESTUDIAR EN</label>
-                <div class="col-6">
-                  <select class="form-select" aria-label="" id="plantel" disabled>
-                    <option value="2">IZCALLI</option>
-                  </select>
-                </div>
-                <div class="col-6">
-                  <select class="form-select" aria-label="" id="nivel">
-                    <option value="0">NIVEL</option>
-                  </select>
-                </div>
-            </div>
-            <div class="mb-3">
-              <select class="form-select" aria-label="" id="periodo">
-                <option value="0">INICIAR CLASES EN:</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <select class="form-select" aria-label="" id="carrera">
-                <option value="0">CARRERA</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <select class="form-select" aria-label="" id="horario">
-                <option value="0">HORARIO</option>
-              </select>
-            </div>
-            <div id="aviso" class="d-grid gap-2 col-6 mx-auto mb-3">
-                <p class="">He leido y acepto el <a href="https://unimex.edu.mx/aviso-privacidad" target="_blank" rel="noopener noreferrer">aviso de privacidad</a></p>
-            </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button id="boton" class="btn btn-primary btn-block" type="submit">ENVIAR</button>
-            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="clearfix"></div>
+  </header>
+
+  <div class="clearfix"></div>
+
+  <main class="container">
+
+    <section id="registro" class="row">
+
+      <div id="mensaje" class="col d-flex">
+        <h2 id="titulo1">TITULACIÓN</h2>
+        <div class="clearfix"></div>
+        <h2 id="titulo2">AUTOMATICA</h2>
+      </div>
     
-    
-        </form>
+      <form id="formulario" class="col shadow2 p-3 mb-5 mt-5 bg-body rounded float-end" action="">
+        <label for="" class="form-label">NOMBRE</label>
+        <div class="mb-3">
+          <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
+        </div>
+        <div class="row mb-3">
+          <!--
+                  <div class="col-4">
+                    <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
+                  </div>
+                -->
+          <div class="col-6">
+            <input id="apaterno" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Last name">
+          </div>
+          <div class="col-6">
+            <input id="amaterno" type="text" class="form-control" placeholder="Apellido Materno" aria-label="Last name">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">EMAIL</label>
+          <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Last name">
+        </div>
+        <div class="row mb-3">
+          <label for="telefono" class="form-label">TELEFONOS DE CONTACTO</label>
+          <div class="col-6">
+            <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name">
+          </div>
+          <div class="col-6">
+            <input id="celular" type="text" class="form-control" placeholder="Celular" aria-label="Last name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="" class="form-label">QUIERO ESTUDIAR EN</label>
+          <div class="col-6">
+            <select class="form-select" aria-label="" id="plantel" disabled>
+              <option value="2">IZCALLI</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <select class="form-select" aria-label="" id="nivel">
+              <option value="0">NIVEL</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" aria-label="" id="periodo">
+            <option value="0">INICIAR CLASES EN:</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" aria-label="" id="carrera">
+            <option value="0">CARRERA</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" aria-label="" id="horario">
+            <option value="0">HORARIO</option>
+          </select>
+        </div>
+        <div id="aviso" class="d-grid gap-2 col-6 mx-auto mb-3">
+          <p class="">He leido y acepto el <a href="https://unimex.edu.mx/aviso-privacidad" target="_blank"
+              rel="noopener noreferrer">aviso de privacidad</a></p>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button id="boton" class="btn btn-primary btn-block" type="submit">ENVIAR</button>
+        </div>
 
-    </main>
+
+      </form>
+
+    </section>
+
+    <section id="informacion" class="row">
+      <div id="ubicacion" class="col">
+        <div id="icono-ubicacion" class="float-start">
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+        <h3>PLANTEL IZCALLI</h3>
+        <p>
+          Av. Del Vidrio No. 15, Col. Plaza Dorada, Centro Urbano (Frente a la FES Cuautitlán) Campo 1, C.P. 54760
+          Cuautitlán Izcalli, Estado de México
+        </p>
+
+      </div>
+      <div id="turnos" class="col">
+        <p>
+          ESTUDIA Y TRABAJA AL MISMO TIEMPOCON NUESTROS DIFRENTES HORARIOS:
+        </p>
+        <div>
+          <ul>
+            <li class="text-center">Matutino</li>
+            <li>Verpertino</li>
+            <li>Nocturo</li>
+            <li>Sabatino</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="promocion" class="row">
+      <h2 id="tit1" class="col-12">OBTÉN UNA BECA</h2>
+      <h2 id="tit2" class="col-12">60 % DE DESCUENTO</h2>
+      <h2 id="tit3" class="col-12">EN TURNO MATUTINO</h2>
+    </section>
+
+    <section id="oferta">
+      <div id="titulo-oferta">
+        <h5>OFERTA ACADEMICA</h5>
+      </div>
+      <div id="row-oferta" class="row min-vw-100">
+        <div class="col-md-6">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+
+    <section id="slider">
+      <div>
+        <h2>NUESTRO CAMPUS</h2>
+      </div>
+    </section>
+
+  </main>
 
 
-    
+  <footer class="mt-3">
+
+    <p>UNIVERSIDAD MEXICANA &COPY;</p>
+  </footer>
+
+
+
 </body>
+
 </html>
