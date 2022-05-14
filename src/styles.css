@@ -34,6 +34,7 @@ header > #logo > a > img{
     max-height: 90px;
 }
 
+
 #logo{
     width: 100px;
     height: 150px;
@@ -60,22 +61,23 @@ header > #logo > a > img{
 
 /*section registro*/
 
+#registro > #mensaje {
+
+    align-self: center;
+    text-align: center;
+}
+
 #registro > #mensaje > #titulo1 {
 
     color: var(--azul-unimex);
     font-weight: bold;
-    display: flex;
-    align-items: center;
 }
 
 #registro > #mensaje > #titulo2 {
     color: var(--naranja-unimex);
-    display: flex;
-    align-items: center;
 }
 
 #registro > #formulario{
-    max-width: 350px;
     height: auto;
 }
 
@@ -109,6 +111,12 @@ a{
 
 /*section informacion*/
 
+#informacion > #ubicacion, #turnos{
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0 !important;
+
+}
+
 #informacion > #ubicacion{
     background-color: var(--azul-unimex);
     color: white;
@@ -133,9 +141,10 @@ a{
     text-align: left;
 }
 
-#informacion > #turnos{
-    text-align: center;
-    margin-left: -12px;
+#informacion > #turnos ul{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #informacion > #turnos > p {
@@ -147,11 +156,6 @@ a{
     color: white;
     background-color: var(--naranja-unimex);
     border-radius: 0px 20px 20px 0px;
-    text-align: center;
-}
-
-#informacion > #turnos > div > ul > li{
-    width: fit-content;
 }
 
 /* section promocion */
@@ -171,6 +175,8 @@ a{
     color: var(--naranja-unimex);
 }
 
+/*seccion oferta academica*/
+
 #oferta > #titulo-oferta{
     background-color: var(--naranja-unimex);
     color: white;
@@ -179,13 +185,17 @@ a{
     padding: 5px;
 }
 
-
-
+#oferta ul li::marker{
+    color: var(--naranja-unimex) !important;
+    font-size: 1.2rem;
+}
 
 #row-oferta{
     background-color: var(--fondo-gris);
-    width: 100%;
+    padding: 20px;
 }
+
+/*seccion del slider*/
 
 #slider > div{
     width: fit-content;
