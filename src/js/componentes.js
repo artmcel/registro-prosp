@@ -67,6 +67,7 @@ const agregarContenido = ( plantel )=>{
         document.getElementById('tit1').innerText = content.titulo1;
         document.getElementById('tit2').innerText = content.titulo2;
         document.getElementById('tit3').innerText = content.titulo3;
+        let imagenSlider = document.querySelectorAll('#imagen-slider');
 
         for( let carrera in content.ofertaAcademica[0] ){
 
@@ -80,6 +81,13 @@ const agregarContenido = ( plantel )=>{
             let lista2 = document.getElementById('bloque2');
 
             lista2.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
+        }
+
+        for(let {foto1, foto2, foto3 } of content.srcFotos){
+            
+            imagenSlider[0].src = foto1;
+            imagenSlider[1].src = foto2;
+            imagenSlider[2].src = foto3;
         }
 
     });
