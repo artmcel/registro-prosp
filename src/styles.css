@@ -18,8 +18,8 @@ body, html{
 }
 
 .container > section {
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 header{
@@ -196,13 +196,48 @@ a{
 }
 
 /*seccion del slider*/
-
-#slider > div{
-    width: fit-content;
+#slider > .col-3{
+    text-align: left;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
 
-#slider > div > h2 {
-    border-bottom: var(--naranja-unimex) solid 2px;
+#titulo-slider1, #titulo-slider2{
+    opacity: 30%;
+    color: var(--azul-unimex);
+    font-weight: bold;
+}
+
+#titulo-slider1{
+    
+    min-height: max-content;
+
+} 
+#titulo-slider2{
+    
+
+}
+
+
+#slider > .col-9{
+    align-self: center;
+}
+
+#slider img{
+    height: auto;
+}
+
+
+#boton-info{
+    border: none;
+    border-radius: 25px 25px 25px 25px !important;
+    color: var(--naranja-unimex);
+    font-weight: 600;
+
+}
+
+#boton-info:hover{
+    color: var(--azul-unimex);
 }
 
 

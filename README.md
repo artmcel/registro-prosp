@@ -1,22 +1,8 @@
-# Proyecto Landings SideTrack
+# Proyecto Registro prospectos
 
-Proyecto de landings pages con la agencia **SideTrack**
+Proyecto de registro de prospectos por cambio de proveedor de internet.
 
-Este proyecto consta de varias landings page, este seria el cuerpo de todas esas landings, toda la logica de los fomularios, peticiones, validaciones, vista, asi como el formulario mismo esta aqui.
-
-La idea de desarrollarlo con **WebPack** es que cada bulding se haga dependiendo las necesidades.
-
-## Ladings
-
-Se construiran las siguientes landings:
-
-Primera etapa.
---------------
-- Por plantel: izcalli, satelite, polanco, veracruz y veracruz SUA.
-
-Segunda Etapa.
---------------
-- Una landing por la oferta academica que tenemos.
+Se pretende crear un formulario que nos ayude a guardar los registro de los prospectos, mientras se hace la migraciónd e servicios de internet.
 
 ### ComponetesJS
 
@@ -26,10 +12,9 @@ Aca se ubica toda la logica del proyecto, `funciones`, `respuestas`, `variables`
 aca se ubican todas las peticiones fetch con `async functions` hacia el **Backend** en PHP, hay peticiones `GET` y `POST` con su respectivo `return` de las respuestas.
 Se construye una `const 'nombre de la function'= async()=>{}` para cada una de las peticiones.
 
+Se hara una paticion a un json donde estara ubicado cada unos de los planteles con sus respectivas carreras y horarios.
 
-Crecimiento
------------
-Dependera de las resultados obtenidos durante la primera etapa.
+
 
 # Estos son los pasos para construir el proyecto.
 
