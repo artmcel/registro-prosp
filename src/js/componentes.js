@@ -8,7 +8,7 @@
 
 const peticiones      = import( /* webpackChunkName: "peticiones" */ './services/peticiones'),
       Swal            = import(/*webpackPrefetch: true*/ 'sweetalert2'),
-      contenido       = import( /* webpackChunkName: "contenido" */ './contenido'),
+      oferta          = import( /* webpackChunkName: "oferta" */ './oferta-unimex'),
       boton           = document.getElementById('boton'),
       inputs          = document.querySelectorAll('input'),
       selects         = document.querySelectorAll('select'),
@@ -39,178 +39,252 @@ window.addEventListener('load', () => {
     });
     //console.log(cookies);
     //llamamos a la funcion para cargar los niveles...
-    agregaNivelSelect(selectPlanteles.value);
+    //agregaNivelSelect(selectPlanteles.value);
     //agregaPeriodoSelect(selectPlanteles.value);
 
-    let plantel = 'izcalli';
+    //let plantel = 'izcalli';
 
-    agregarContenido( plantel );
+    //agregarContenido( plantel );
+
+    //agregaCarreraSelect();
+
+    selectPlanteles.addEventListener('change', (e) => {
+
+        if( e.target.value >= '0' ){
+
+            selectNiveles.innerHTML = '<option value="0">Selecciona Nivel</option>';
+            selectPeriodos.innerHTML = '<option value="0">Selecciona Periodo</option>';
+            selectCarrera.innerHTML = '<option value="0">Selecciona Carrera</option>';
+            
+           //throw 'No seleccionaste plantel';
+        }
+    
+        selectNiveles.insertAdjacentHTML('beforeend', `
+            <option value="1">Licenciatura</option>
+            <option value="2">Especialidad</option>
+            <option value="3">Maestría</option>
+        `);
+
+        agregarNivelSelect(selectPlanteles.value);
+    
+    
+    
+        //console.log( selectPeriodos.value );
+        //agregaPeriodoSelect(selectPlanteles.value, selectNiveles.value);
+    });
 
 });
 
 /**
  * function para insertar el contenido desde el objeto contenido en ./js/contenido.js...
+ * 
+ const agregarContenido = ( plantel )=>{
+ 
+     if(!plantel) throw 'no hay plantel';
+ 
+     contenido.then(module => {
+ 
+         const content = module.obtenerContenidoPlantel(plantel);
+ 
+         document.getElementById('titulo1').innerText = content.tituloPrincipal1;
+         document.getElementById('titulo2').innerText = content.tituloPrincipal2;
+         document.getElementById('nombre-plantel').innerText = `PLANTEL ${content.plantel}`;
+         document.getElementById('ubicacion-plantel').innerText = content.ubicacion;
+         document.getElementById('tit1').innerText = content.titulo1;
+         document.getElementById('tit2').innerText = content.titulo2;
+         document.getElementById('tit3').innerText = content.titulo3;
+         let imagenSlider = document.querySelectorAll('#imagen-slider');
+ 
+         for( let carrera in content.ofertaAcademica[0] ){
+ 
+             let lista1 = document.getElementById('bloque1');
+ 
+             lista1.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
+         }
+ 
+         for( let carrera in content.ofertaAcademica[1] ){
+ 
+             let lista2 = document.getElementById('bloque2');
+ 
+             lista2.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
+         }
+ 
+         for(let {foto1, foto2, foto3 } of content.srcFotos){
+             
+             imagenSlider[0].src = foto1;
+             imagenSlider[1].src = foto2;
+             imagenSlider[2].src = foto3;
+         }
+ 
+     });
+ 
+ };
+
+
+
  */
 
-const agregarContenido = ( plantel )=>{
+const agregarNivelSelect = async (idPlantel) => {
 
-    if(!plantel) throw 'no hay plantel';
 
-    contenido.then(module => {
+    if( idPlantel == '0' ){
 
-        const content = module.obtenerContenidoPlantel(plantel);
+        selectNiveles.innerHTML = '<option value="0">Selecciona Nivel</option>';
+        selectPeriodos.innerHTML = '<option value="0">Selecciona Periodo</option>';
+        selectCarrera.innerHTML = '<option value="0">Selecciona Carrera</option>';
 
-        document.getElementById('titulo1').innerText = content.tituloPrincipal1;
-        document.getElementById('titulo2').innerText = content.tituloPrincipal2;
-        document.getElementById('nombre-plantel').innerText = `PLANTEL ${content.plantel}`;
-        document.getElementById('ubicacion-plantel').innerText = content.ubicacion;
-        document.getElementById('tit1').innerText = content.titulo1;
-        document.getElementById('tit2').innerText = content.titulo2;
-        document.getElementById('tit3').innerText = content.titulo3;
-        let imagenSlider = document.querySelectorAll('#imagen-slider');
+    }
 
-        for( let carrera in content.ofertaAcademica[0] ){
+    selectNiveles.addEventListener('change', (e) => {
+        
+        if( e.target.value >= '0' ){
 
-            let lista1 = document.getElementById('bloque1');
-
-            lista1.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
+            selectPeriodos.innerHTML = '<option value="0">Selecciona Periodo</option>';
+            selectCarrera.innerHTML = '<option value="0">Selecciona Carrera</option>';
+    
         }
 
-        for( let carrera in content.ofertaAcademica[1] ){
+        selectPeriodos.insertAdjacentHTML('beforeend', `
+            <option value="101">MAYO -  2022</option>
+            <option value="102">SEPTIEMBRE - 2022</option>
+        `);
 
-            let lista2 = document.getElementById('bloque2');
+        agregaPeriodoSelect(idPlantel, selectNiveles.value);
+    })
 
-            lista2.insertAdjacentHTML('beforeend', `<li>${carrera}</li>`);
-        }
-
-        for(let {foto1, foto2, foto3 } of content.srcFotos){
-            
-            imagenSlider[0].src = foto1;
-            imagenSlider[1].src = foto2;
-            imagenSlider[2].src = foto3;
-        }
-
-    });
 
 };
 
-/**
- * 
- * importar modulo para cargar los planteles..
- * 
- */
-const agregaNivelSelect = async (idPlantel) => {
-
-    await peticiones.then(module => {
-
-        const niveles = module.obtenerNiveles(idPlantel);
-        niveles.then(nivel => {
-
-            //console.log(nivel);
-            
-            for (let { clave, descrip } of nivel) {
-                selectNiveles.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
-            }
-            
-
-        });
-    });
-
-}
-
+/*
 selectNiveles.addEventListener('change', (e) => {
 
     if( e.target.value >= '0' ){
 
         selectPeriodos.innerHTML = '<option value="0">INICIAR CLASES EN:</option>';
         selectCarrera.innerHTML = '<option value="0">CARRERA</option>';
-        selectHorario.innerHTML = '<option value="0">HORARIO</option>';
 
     }
 
     //console.log( selectPeriodos.value );
-    agregaPeriodoSelect(selectPlanteles.value, selectNiveles.value);
-})
+    //agregaPeriodoSelect(selectPlanteles.value, selectNiveles.value);
+    selectPeriodos.insertAdjacentHTML('beforeend', `
+        <option value="101">MAYO -  2022</option>
+        <option value="102">SEPTIEMBRE - 2022</option>
+    `);
 
+});
+*/
 const agregaPeriodoSelect = async (idPlantel, idNivel) => {
 
-    if(idNivel === '0') throw 'No seleccionaste nivel';
 
-    await peticiones.then(module => {
+    if(idPlantel === '0' || idNivel === '0'){
 
-        const periodo = module.obtenerPeriodos(idPlantel);
-        periodo.then(periodo => {
+        selectPeriodos.innerHTML = '<option value="0">Selecciona Periodo</option>';
+        selectCarrera.innerHTML = '<option value="0">Selecciona Carrera</option>';
+    }
 
-            //console.log(nivel);
+    selectPeriodos.addEventListener('change', (e) => {
 
-            for (let { clave, descrip } of periodo) {
-                selectPeriodos.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
-            }
+        if( e.target.value >= '0' ){
 
-        });
+            selectCarrera.innerHTML = '<option value="0">CARRERA</option>';
+
+        }
+
+        agregaCarreraSelect(idPlantel, idNivel, selectPeriodos.value);
+
+
+
     });
+
+
+
+
+
 
 }
 
-selectPeriodos.addEventListener('change', (e) => {
-
-    if( e.target.value >= '0' ){
-
-        selectCarrera.innerHTML = '<option value="0">CARRERA</option>';
-        selectHorario.innerHTML = '<option value="0">HORARIO</option>';
-
-    }
-    agregaCarreraSelect(selectNiveles.value, selectPeriodos.value, selectPlanteles.value);
-})
-
-const agregaCarreraSelect = async( idNivel, idPeriodo, idPlantel) => {
-
-    if(idPeriodo === '0' || idNivel === '0') throw 'No seleccionaste periodo';
-
-    let idModo = '';
-
-    /**
-     * Para la landig de sua se utlizara el modo 2 para obtener las carreras
-     * para todos los demas se usara el modo 0
-     */
-
-    idPlantel === '5' ? idModo = '2' : idModo = '0';
+/**
+ * funcion agregar peridos
+ * 
+ 
+ selectPeriodos.addEventListener('change', (e) => {
+ 
+     if( e.target.value >= '0' ){
+ 
+         selectCarrera.innerHTML = '<option value="0">CARRERA</option>';
+         selectHorario.innerHTML = '<option value="0">HORARIO</option>';
+ 
+     }
+     agregaCarreraSelect(selectNiveles.value, selectPeriodos.value, selectPlanteles.value);
+ })
+ 
 
 
+ */
+
+
+const agregaCarreraSelect = async( idPlantel, idNivel, idPeriodo) => {
+
+    //console.log(idNivel, idPeriodo, idPlantel);
+
+    if( idNivel === '0' || idPeriodo === '0' ||  idPlantel === '0'){
+
+        selectCarrera.innerHTML = '<option value="0">Selecciona Carrera</option>';
+    } 
+
+    oferta.then(module => {
+
+        const contenido = module.obtenerOfertaAcademica(idPlantel, idNivel, idPeriodo);
+
+
+        for( ke in contenido ){
+
+            console.log(key, value);
+        }
+        
+        selectCarrera.insertAdjacentHTML('beforeend', `<option value="" selected>No hay carreras disponibles</option>`);
+    })
+
+    /*
     await peticiones.then(module => {
 
-        const carreras = module.obtenerCarreras(idModo, idNivel, idPeriodo, idPlantel);
+        const carreras = m
         carreras.then(carrera => {
 
-            //console.log(carrera);
-            if(!carrera) {
-                
-                selectCarrera.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay carreras disponibles</option>`);
-                selectHorario.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay horarios disponibles</option>`);
+            console.log(carrera);
+             //console.log(carrera);
+             if(!carrera) {
+                 
+                 selectCarrera.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay carreras disponibles</option>`);
+                 selectHorario.insertAdjacentHTML('beforeend', `<option value="0" selected>No hay horarios disponibles</option>`);
+ 
+             }
+ 
+             if(carrera.length){
+                 for (let { clave, descrip } of carrera) {
+                     //console.log(clave, descrip);
+                     selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+                     
+                 }
+             }
+             
+             if(carrera.length === undefined) {
+ 
+                 for (let { clave, descrip } of [carrera]) {
+                     //console.log(clave, descrip);
+                     selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
+                 }
+ 
+             }
 
-            }
-
-            if(carrera.length){
-                for (let { clave, descrip } of carrera) {
-                    //console.log(clave, descrip);
-                    selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
-                    
-                }
-            }
-            
-            if(carrera.length === undefined) {
-
-                for (let { clave, descrip } of [carrera]) {
-                    //console.log(clave, descrip);
-                    selectCarrera.insertAdjacentHTML('beforeend', `<option value="${clave}">${descrip}</option>`);
-                }
-
-            }
         });
     });
+    */
 
 }
 
+/*
 selectCarrera.addEventListener('change', (e) => {
     
     if( e.target.value >= '0' ){
@@ -250,6 +324,8 @@ const agregarHorarioSelect = async( idCarrera, idNivel, idPeriodo, idPlantel ) =
         });
     })
 }
+
+*/
 
 /**
  * 
