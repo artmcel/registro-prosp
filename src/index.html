@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Registro Prospecto</title>
 </head>
 
 <body>
@@ -57,23 +57,13 @@
   <main class="container">
 
     <section id="registro" class="row">
-
-      <div id="mensaje" class="col">
-        <h2 id="titulo1"></h2>
-        <h2 id="titulo2"></h2>
-      </div>
     
-      <form id="formulario" class="col shadow2 p-3 mb-5 mt-5 bg-body rounded float-end" action="">
+      <form id="formulario" class="col shadow2 p-3 mb-5 mt-5 bg-body rounded float-start" action="">
         <label for="" class="form-label">NOMBRE</label>
         <div class="mb-3">
           <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
         </div>
         <div class="row mb-3">
-          <!--
-                  <div class="col-4">
-                    <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
-                  </div>
-                -->
           <div class="col-6">
             <input id="apaterno" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Last name">
           </div>
@@ -97,29 +87,33 @@
         <div class="row mb-3">
           <label for="" class="form-label">QUIERO ESTUDIAR EN</label>
           <div class="col-6">
-            <select class="form-select" aria-label="" id="plantel" disabled>
+            <select class="form-select" aria-label="" id="plantel">
+              <option value="0">Selecciona Plantel</option>
               <option value="2">IZCALLI</option>
+              <option value="3">SATÉLITE</option>
+              <option value="4">POLANCO</option>
+              <option value="5">VERACRUZ</option>
             </select>
           </div>
           <div class="col-6">
             <select class="form-select" aria-label="" id="nivel">
-              <option value="0">NIVEL</option>
+              <option value="0">Selecciona Nivel</option>
+              <option value="1">Licenciatura</option>
+              <option value="2">Especialidad</option>
+              <option value="3">Maestría</option>
             </select>
           </div>
         </div>
         <div class="mb-3">
           <select class="form-select" aria-label="" id="periodo">
             <option value="0">INICIAR CLASES EN:</option>
+            <option value="101">MAYO -  2022</option>
+            <option value="102">SEPTIEMBRE - 2022</option>
           </select>
         </div>
         <div class="mb-3">
-          <select class="form-select" aria-label="" id="carrera">
-            <option value="0">CARRERA</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <select class="form-select" aria-label="" id="horario">
-            <option value="0">HORARIO</option>
+          <select class="form-select" aria-label="" id="carrera" disabled>
+            <option value="0">Selecciona Carrera</option>
           </select>
         </div>
         <div id="aviso" class="d-grid gap-2 col-6 mx-auto mb-3">
@@ -132,80 +126,6 @@
 
 
       </form>
-
-    </section>
-
-    <section id="informacion" class="row">
-      <div id="ubicacion" class="col">
-        <div id="icono-ubicacion" class="float-start">
-          <i class="bi bi-geo-alt-fill"></i>
-        </div>
-        <h3 id="nombre-plantel"></h3>
-        <p id="ubicacion-plantel"></p>
-
-      </div>
-      <div id="turnos" class="col">
-        <p>
-          ESTUDIA Y TRABAJA AL MISMO TIEMPOCON NUESTROS DIFRENTES HORARIOS:
-        </p>
-        <div>
-          <ul>
-            <li>Matutino</li>
-            <li>Verpertino</li>
-            <li>Nocturo</li>
-            <li>Sabatino</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="promocion" class="row">
-      <h2 id="tit1" class="col-12"></h2>
-      <h2 id="tit2" class="col-12"></h2>
-      <h2 id="tit3" class="col-12"></h2>
-    </section>
-
-    <section id="oferta">
-      <div id="titulo-oferta">
-        <h5>OFERTA ACADEMICA</h5>
-      </div>
-      <div id="row-oferta" class="row">
-        <div class="col-md-6">
-          <ul id="bloque1"></ul>
-        </div>
-        <div class="col-md-6">
-          <ul id="bloque2"></ul>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-    </section>
-
-    <section id="slider" class="row">
-      <div class="col-3">
-        <h3 id="titulo-slider1">UNIVERSIDAD</h3>
-        <h3 id="titulo-slider2">MEXICANA</h3>
-      </div>
-      <div class="col-9">
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-              <img id="imagen-slider" width="966" height="543" class="d-block w-100" alt="imagenes-slider">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-              <img id="imagen-slider" width="966" height="543" class="d-block w-100" alt="imagenes-slider">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-              <img id="imagen-slider" width="966" height="543" class="d-block w-100" alt="imagenes-slider">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="col-12 mt-5 mb-2">
-        <a href="https://unimex.edu.mx" target="_blank" rel="noopener noreferrer">
-          <button id="boton-info" class="float-end shadow-lg p-3 mb-5 bg-body rounded">MÁS INFORMACIÓN</button>
-        </a>
-      </div>
 
     </section>
 
