@@ -1,14 +1,14 @@
 const oferta = [
     {
-        "izcalli": {
-            "licenciatura": {
-                "mayo": {
+        2: {
+            1: {
+                101: {
                     "1 ": "Administración",
                     "14": "Contaduría Pública",
                     "15": "Derecho",
                     "33": "Psicología Social"
                 },
-                "sep": {
+                102: {
                     "1 " : "Administración",
                     "2 " : "Administración de Empresas Turísticas",
                     "10" : "Comercio Internacional y Aduanas",
@@ -25,12 +25,12 @@ const oferta = [
                     "39" : "Turismo"
                 }
             },
-            "especialidad": {
-                "mayo": {
+            2: {
+                101: {
                     "25": "Habilidadades Directivas",
                     "38": "Terapias Psicosociales"
                 },
-                "sep": {
+                102: {
                     "18": "Derecho Penal",
                     "22": "Educación",
                     "25": "Habilidades Directivas",
@@ -38,13 +38,13 @@ const oferta = [
                 }
 
             },
-            "maestria": {
-                "mayo": {
+            3: {
+                101: {
                     "18": "Derecho Penal",
 		            "25": "Habilidades Directivas",
 		            "38": "Terapias Psicosociales"
                 },
-                "sep": {
+                102: {
                     "1": "Administración",
                     "18": "Derecho Penal",
                     "22": "Educación",
@@ -55,14 +55,14 @@ const oferta = [
             }
 
         },
-        "satelite": {
-            "licenciatura": {
-                "mayo": {
+        3: {
+            1: {
+                101: {
                     "1" :	"Administración",
                     "14" :	"Contaduría Pública",
 
                 },
-                "sep": {
+                102: {
                     "1" :	"Administración",
                     "2"	 : "Administración de Empresas Turísticas",
                     "11" :	"Comunicación",
@@ -79,20 +79,20 @@ const oferta = [
 
                 }
             },
-            "especialidad": {
-                "mayo": {
+            2: {
+                101: {
                     "25": "Habilidadades Directivas",
                 },
-                "sep": {
+                102: {
                     "25": "Habilidades Directivas",
                 }
 
             },
-            "maestria": {
-                "mayo": {
+            3: {
+                101: {
 		            "25": "Habilidades Directivas",
                 },
-                "sep": {
+                102: {
                     "25": "Habilidades Directivas"
 
                 }
@@ -100,12 +100,12 @@ const oferta = [
             }
 
         },
-        "polanco": {
-            "licenciatura": {
-                "mayo": {
+        4: {
+            1: {
+                101: {
                     "1" :	"Administración",
                 },
-                "sep": {
+                102: {
                     "1" :	"Administración",
                     "2"	 : "Administración de Empresas Turísticas",
                     "10" :  "Comercio Internacional y Aduanas",
@@ -124,8 +124,8 @@ const oferta = [
                     "39" :	"Turismo",
                 }
             },
-            "especialidad": {
-                "mayo": {
+            2: {
+                101: {
                     "18" : "Derecho Penal",
                     "25" : "Habilidades Directivas",
                     "27" : "Impuestos",
@@ -133,7 +133,7 @@ const oferta = [
                     "38" : "Terapias Psicosociales",
 
                 },
-                "sep": {
+                102: {
                     "1"  : "Administración",
                     "18" : "Derecho Penal",
                     "25" : "Habilidades Directivas",
@@ -143,14 +143,14 @@ const oferta = [
                 }
 
             },
-            "maestria": {
-                "mayo": {
+            3: {
+                101: {
 		            "25" : "Habilidades Directivas",
                     "27" : "Impuestos",
                     "38" : "Terapias Psicosociales",
 
                 },
-                "sep": {
+                102: {
                     "1"  : "Administración",
                     "25" : "Habilidades Directivas",
                     "27" : "Impuestos",
@@ -162,14 +162,14 @@ const oferta = [
             }
 
         },
-        "veracruz": {
-            "licenciatura": {
-                "mayo": {
+        5: {
+            1: {
+                101: {
                     "15" : "Derecho",
                     "26" : "Idiomas",
 
                 },
-                "sep": {
+                102: {
                     "1" : "Administración",
                     "2" : "Administración de Empresas Turísticas",
                     "8" : "Ciencias de la Educación",
@@ -187,22 +187,22 @@ const oferta = [
                     "39" : "Turismo",
                 }
             },
-            "especialidad": {
-                "mayo": {
+            2: {
+                101: {
                     "25" : "Habilidades Directivas",
                 },
-                "sep": {
+                102: {
                     "1"  : "Administración",
                     "25" : "Habilidades Directivas",
 
                 }
 
             },
-            "maestria": {
-                "mayo": {
+            3: {
+                101: {
 		            "25" : "Habilidades Directivas",
                 },
-                "sep": {
+                102: {
                     "25" : "Habilidades Directivas",
                 }
 
@@ -213,17 +213,8 @@ const oferta = [
     }
 ]
 
-export const obtenerOfertaAcademica = (idPlantel, idNivel, idPeriodo) => {
+export const obtenerOfertaAcademica = (idPlantel, idNivel, idPeriodo) => {    
 
-    if(idPlantel == '2' && idNivel == '1' && idPeriodo == '101'){
-
-        return oferta[0].izcalli.licencaitura.mayo;
-    }
-    if(idPlantel == '2' && idNivel == '1' && idPeriodo == '102'){
-
-        return oferta[0].izcalli.licencaitura.sep;
-    }
-
-
+    return oferta[0][idPlantel][idNivel][idPeriodo];
 
 }    
