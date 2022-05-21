@@ -136,7 +136,7 @@ const enviarDatos = async ( datos ) => {
                         alerta.fire({
                             title: 'Exito',
                             icon: 'success',
-                            text: 'Datos guardados con exito',
+                            text: 'En breve uno de nuestro asesores se pondrá en contacto contigo para brindarte una atención puntual y personalizada',
                             confirmButtonColor: '#004b93',
                         }).then( ( result ) => {
                             if(result.isConfirmed){
