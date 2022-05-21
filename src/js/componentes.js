@@ -124,11 +124,29 @@ const enviarDatos = async ( datos ) => {
         const respuesta = module.guardarDatos(datos);
         
         respuesta.then( respuesta => {
+            console.log(respuesta.status);
 
-            const { FolioCRM } = respuesta;
+            if( respuesta.status === 'ok'){
 
-            if(!FolioCRM) throw 'No se pudo guardar los datos';
-            console.log(FolioCRM);
+
+                    
+                    Swal.then( module => {
+    
+                        const alerta = module.default;
+                        alerta.fire({
+                            title: 'Exito',
+                            icon: 'success',
+                            text: 'Datos guardados con exito',
+                            confirmButtonColor: '#004b93',
+                        }).then( ( result ) => {
+                            if(result.isConfirmed){
+                                
+                                window.location.href = './';
+                            }
+                        });
+                    });
+    
+            }
 
         });
     });
