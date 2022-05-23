@@ -27,6 +27,8 @@ if( $url == "guardaDatos" ){
     $recibeJson = json_decode(file_get_contents('php://input'), false);
     $datos      = (array)$recibeJson;
 
+    if($datos['url'] == '') $datos['url'] = 11;
+
     if( !empty($datos['utm_source']) || !empty($datos['utm_campaign']) || !empty($datos['utm_medium']) || !empty($datos['utm_id']) || !empty($datos['utm_content']) ) {
         $datos['utm_source']= $datos['utm_source'];
         $datos['utm_campaign']= $datos['utm_campaign'];
@@ -55,7 +57,7 @@ if( $url == "guardaDatos" ){
         'pNivel_Estudio'    => $datos['nivel'],
         'pCarrera'          => $datos['carrera'],
         'pHorario'          => 0,
-        'pOrigen'           => '13',
+        'pOrigen'           => $datos['url'],
         'utpsource'         => $datos['utm_source'],
         'descripPublicidad' => $datos['utm_campaign'],
         'campaignMedium'    => $datos['utm_medium'],
@@ -67,6 +69,7 @@ if( $url == "guardaDatos" ){
     $guardaDatos($args);
 
 }
+
 
 
 
