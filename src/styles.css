@@ -1,6 +1,7 @@
 /* Este es el estilo del main */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
+
 :root{
     --naranja-unimex: #f8981d;
     --azul-unimex : #004b93;
@@ -10,45 +11,40 @@
 *{
     margin: 0;
     padding: 0;
+   
 }
 
 body, html{
     width: 100%;
     overflow-x: hidden;
+    background-image: url(./assets/img/FONDO.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*
+.container{
+    background-image: url(./assets/img/MODELO2.png);
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: local;
+}
+*/
+
+header{
+    height: fit-content;
+    width: 100%;
+}
+
+#nav-logo{
+    float: right;
+    height: auto;
+    width: 340px;
 }
 
 .container > section {
     margin-bottom: 15px;
     margin-top: 15px;
-}
-
-header{
-    width: 100%;
-    height: 80px;
-    color: var(--azul-unimex);
-
-}
-
-header > #logo > a > img{
-    max-width: 90px;
-    max-height: 90px;
-}
-
-
-#logo{
-    width: 100px;
-    height: 150px;
-    background-color: var(--azul-unimex);
-    border-radius: 0px 0px 10px 10px;
-    margin-left: 15px;
-}
-
-#row-navbar{
-    display: contents;
-}
-
-#row-navbar > .col-7{
-    line-height: 50px;
 }
 
 .col-5{
@@ -60,6 +56,56 @@ header > #logo > a > img{
 }
 
 /*section registro*/
+
+#registro{
+    background-color: white;
+    width: 50%;
+    margin-top: 100px;
+
+}
+
+#ilustracion{
+    max-width: 200px;
+    display: block;
+    position: static;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#img-ilustracion{
+    height: auto;
+    margin-top: -100px;
+}
+
+#img-modelo{
+    height: max-content;
+    margin-left: -171px;
+}
+
+#registro > #mensaje-formulario, #formulario{
+    height: auto;
+}
+
+#mensaje-formulario{
+    font-weight: bold;
+    font-style: italic;
+    color: #001e62;
+}
+
+
+#modelo{
+    height: 900px;
+    width: 360px;
+    float: left;
+    display: flex;
+    position: static;
+    margin-left: -330px;
+    background-image: url(./assets/img/MODELO2.png);
+    background-repeat: no-repeat;
+    background-size: 406px 100%;
+    
+
+}
 
 #registro > #mensaje {
 
@@ -109,137 +155,6 @@ a{
     background-color: var(--naranja-unimex);
 }
 
-/*section informacion*/
-
-#informacion > #ubicacion, #turnos{
-    --bs-gutter-x: 0 !important;
-    --bs-gutter-y: 0 !important;
-
-}
-
-#informacion > #ubicacion{
-    background-color: var(--azul-unimex);
-    color: white;
-    border-radius: 30px 30px 30px 30px;
-    padding: 30px;
-}
-
-#informacion > #ubicacion > #icono-ubicacion{
-    width: 35px;
-    height: 50px;
-    background-color:  var(--naranja-unimex);
-    color: white;
-    border-radius: 30px 30px 30px 30px;
-    font-size: 25px;
-    margin-top: -54px;
-    margin-left: -30px;
-    text-align: center;
-    padding: 5px;
-}
-
-#informacion > #ubicacion > p{
-    text-align: left;
-}
-
-#informacion > #turnos ul{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#informacion > #turnos > p {
-    color: var(--azul-unimex);
-    font-weight: bold;
-}
-
-#informacion > #turnos > div{
-    color: white;
-    background-color: var(--naranja-unimex);
-    border-radius: 0px 20px 20px 0px;
-}
-
-/* section promocion */
-#promocion{
-    width: 100%;
-}
-
-#promocion > #tit1{
-    color: var(--azul-unimex);
-    font-weight: bold;
-}
-#promocion > #tit2{
-    color: var(--naranja-unimex);
-    font-weight: bold;
-}
-#promocion > #tit3{
-    color: var(--naranja-unimex);
-}
-
-/*seccion oferta academica*/
-
-#oferta > #titulo-oferta{
-    background-color: var(--naranja-unimex);
-    color: white;
-    border-radius: 15px 15px 0px 0px;
-    width: fit-content;
-    padding: 5px;
-}
-
-#oferta ul li::marker{
-    color: var(--naranja-unimex) !important;
-    font-size: 1.2rem;
-}
-
-#row-oferta{
-    background-color: var(--fondo-gris);
-    padding: 20px;
-}
-
-/*seccion del slider*/
-#slider > .col-3{
-    text-align: left;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-}
-
-#titulo-slider1, #titulo-slider2{
-    opacity: 30%;
-    color: var(--azul-unimex);
-    font-weight: bold;
-}
-
-#titulo-slider1{
-    
-    min-height: max-content;
-
-} 
-#titulo-slider2{
-    
-
-}
-
-
-#slider > .col-9{
-    align-self: center;
-}
-
-#slider img{
-    height: auto;
-}
-
-
-#boton-info{
-    border: none;
-    border-radius: 25px 25px 25px 25px !important;
-    color: var(--naranja-unimex);
-    font-weight: 600;
-
-}
-
-#boton-info:hover{
-    color: var(--azul-unimex);
-}
-
 
 /*footer*/
 footer{
@@ -249,6 +164,98 @@ footer{
     width: 100%;
     height: 50px;
     line-height: 50px;
+    background-color: transparent;
 
 }
+
+/*media queries*/
+
+@media (max-width: 576px) {
+    #registro{
+        width: 100%;
+    }
+    #logo{
+        text-align: center;
+    }
+    #modelo{
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    #registro{
+        width: 100%;
+    }
+    #logo{
+        text-align: center;
+    }
+    #modelo{
+        display: none;
+    }
+    
+
+}
+
+@media (min-width: 768px) {
+    #registro{
+        width: 100%;
+    }
+    #logo{
+        text-align: center;
+    }
+    #modelo{
+        display: none;
+    }
+    
+
+}
+
+@media (min-width: 992px) {
+    #registro{
+        width: 50%;
+        margin-left: calc(100%/3.5);
+    }
+    #logo{
+        text-align: right;
+    }
+    #modelo{
+        display: flex;
+    }
+    
+
+
+    
+}
+
+@media (min-width: 1200px) {
+    #registro{
+        width: 50%;
+        margin-left: calc(100%/3.5);
+    }
+    #logo{
+        text-align: right;
+    }
+    #modelo{
+        display: flex;
+    }
+    
+}
+
+@media (min-width: 1400px) {
+    #registro{
+        width: 50%;
+        margin-left: calc(100%/3.5);
+    }
+    #logo{
+        text-align: right;
+    }
+    #modelo{
+        display: flex;
+        margin-top: -23px;
+    }
+    
+}
+
+
+
 
