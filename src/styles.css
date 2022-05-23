@@ -21,15 +21,6 @@ body, html{
     background-size: cover;
     background-repeat: no-repeat;
 }
-/*
-.container{
-    background-image: url(./assets/img/MODELO2.png);
-    background-size: 40% 100%;
-    background-repeat: no-repeat;
-    background-position: left;
-    background-attachment: local;
-}
-*/
 
 header{
     height: fit-content;
@@ -37,9 +28,8 @@ header{
 }
 
 #nav-logo{
-    float: right;
     height: auto;
-    width: 340px;
+    width: 280px;
 }
 
 .container > section {
@@ -102,7 +92,7 @@ header{
     margin-left: -330px;
     background-image: url(./assets/img/MODELO2.png);
     background-repeat: no-repeat;
-    background-size: 406px 100%;
+    background-size: 360px 100%;
     
 
 }
@@ -171,10 +161,15 @@ footer{
 /*media queries*/
 
 @media (max-width: 576px) {
+    header > .container{
+        justify-content: center !important;
+    }
     #registro{
         width: 100%;
     }
     #logo{
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
     }
     #modelo{
@@ -183,10 +178,15 @@ footer{
 }
 
 @media (min-width: 576px) {
+    header > .container{
+        justify-content: center !important;
+    }
     #registro{
         width: 100%;
     }
     #logo{
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
     }
     #modelo{
@@ -197,10 +197,15 @@ footer{
 }
 
 @media (min-width: 768px) {
+    header > .container{
+        justify-content: center !important;
+    }
     #registro{
         width: 100%;
     }
     #logo{
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
     }
     #modelo{
@@ -211,12 +216,16 @@ footer{
 }
 
 @media (min-width: 992px) {
+    header > .container{
+        justify-content: right !important;
+    }
     #registro{
         width: 50%;
         margin-left: calc(100%/3.5);
     }
     #logo{
-        text-align: right;
+        margin-left: 0;
+        margin-right: 0;
     }
     #modelo{
         display: flex;
@@ -228,12 +237,16 @@ footer{
 }
 
 @media (min-width: 1200px) {
+    header > .container{
+        justify-content: right !important;
+    }
     #registro{
         width: 50%;
         margin-left: calc(100%/3.5);
     }
     #logo{
-        text-align: right;
+        margin-left: 0;
+        margin-right: 0;
     }
     #modelo{
         display: flex;
@@ -242,12 +255,17 @@ footer{
 }
 
 @media (min-width: 1400px) {
+    header > .container{
+        justify-content: right !important;
+    }
     #registro{
         width: 50%;
         margin-left: calc(100%/3.5);
     }
     #logo{
-        text-align: right;
+        margin-left: 0;
+        margin-right: 0;
+        
     }
     #modelo{
         display: flex;
