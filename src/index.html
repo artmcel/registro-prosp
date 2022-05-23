@@ -11,77 +11,58 @@
 <body>
 
   <header class="mb-3">
-    <div id="logo" class="float-start">
+    <div id="logo" class="navbar-brand">
       <a href="https://unimex.edu.mx" target="_blank" rel="noopener noreferrer">
-        <!--<img src="" alt="">-->
+        <img id="nav-logo" width="678" height="381" src="./assets/img/LOGO METRO.PNG" alt="Logo UNIMEX">
       </a>
     </div>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <div class="d-flex">
-          <div id="row-navbar" class="row">
-            <div class="col-7">
-              <a href="https://unimex.edu.mx" target="_blank" rel="noopener noreferrer">
-                <span id="contacto">ACERCA DE UNIMEX</span>
-              </a>
-            </div>
-            <div class="col-5 ">
-              <span id="contacto">CONÓCENOS</span><br>
-              <a href="https://" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-whatsapp"></i>
-              </a>
-
-              <a href="https://" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-facebook"></i>
-              </a>
-
-              <a href="https://" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-twitter"></i>
-              </a>
-
-              <a href="https://" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-instagram"></i>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </nav>
     <div class="clearfix"></div>
   </header>
 
   <div class="clearfix"></div>
 
   <main class="container">
+    <section id="registro" class="p-3 mb-5 bg-body rounded">
+      <div id="ilustracion">
+        <img id="img-ilustracion" src="assets/img/ilustracion.png" width="200" height="113" class="img-thumbnail rounded-circle" alt="ilustración">
+      </div>
+      <div id="modelo">
+        <!--
+          <img id="img-modelo" src="assets/img/MODELO2.PNG" width="200" height="113" class="float-start" alt="ilustración">
 
-    <section id="registro" class="row">
-    
-      <form id="formulario" class="col shadow2 p-3 mb-5 mt-5 bg-body rounded float-start" action="">
+        -->
+      </div>
+      <div id="mensaje-formulario" class="col-12 mt-3 p-3 text-center">
+        <h3>En este momento nuestro sitio web se encuentra en actualización, te solicitamos nos compartas tus datos en el siguiente formulario.</h3>
+      </div>
+      
+      <form id="formulario" class="m-3 ps-3">
         <label for="" class="form-label">NOMBRE</label>
         <div class="mb-3">
-          <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name">
+          <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" required>
         </div>
         <div class="row mb-3">
           <div class="col-6">
-            <input id="apaterno" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Last name">
+            <input id="apaterno" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Last name" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" required>
           </div>
           <div class="col-6">
-            <input id="amaterno" type="text" class="form-control" placeholder="Apellido Materno" aria-label="Last name">
+            <input id="amaterno" type="text" class="form-control" placeholder="Apellido Materno" aria-label="Last name" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]">
           </div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">EMAIL</label>
-          <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Last name">
+          <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Last name" required>
+          <div id="emailHelp" class="form-text">Ejemplo: tucorreo@dominio.com</div>
         </div>
         <div class="row mb-3">
           <label for="telefono" class="form-label">TELEFONOS DE CONTACTO</label>
           <div class="col-6">
-            <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name">
+            <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name" maxlength="10" pattern="[0-9]{10}" required>
+            <div id="telefonoHelp" class="form-text">Número a 10 dígitos</div>
           </div>
           <div class="col-6">
-            <input id="celular" type="text" class="form-control" placeholder="Celular" aria-label="Last name">
+            <input id="celular" type="text" class="form-control" placeholder="Celular" aria-label="Last name" maxlength="10" pattern="[0-9]{10}">
+            <div id="celularHelp" class="form-text">Número a 10 dígitos</div>
           </div>
         </div>
         <div class="row mb-3">
