@@ -90,7 +90,16 @@ boton.addEventListener('click', (e) => {
     // obtener informacion de los inputs..
     inputs.forEach(({ id, value }) => {
 
+        textReg = new RegExp(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/);
+        numReg = new RegExp(/^[0-9]*$/);
+
         if (!value) throw alerta(id);
+        if(value.trim() === '') throw alerta(id);
+        if(id === 'nombre' && !textReg.test(value)) throw mensajeError(id);
+        if(id === 'apaterno' && !textReg.test(value)) throw mensajeError(id);
+        if(id === 'amaterno' && !textReg.test(value)) throw mensajeError(id);
+        if(id === 'telefono' && !numReg.test(value)) throw mensajeError(id);
+        if(id === 'celular' && !numReg.test(value)) throw mensajeError(id);
         e.preventDefault();
 
         datos = { ...datos, [id]: value };
@@ -166,6 +175,23 @@ const alerta = ( datoVacio ) => {
             title: 'Error',
             icon: 'error',
             text: `El campo ${datoVacio} es obligatorio`,
+            confirmButtonColor: '#004b93',
+        });
+        return false;
+
+    });
+
+}
+
+const mensajeError = ( inp ) => {
+
+    Swal.then( module =>{
+
+        const alerta = module.default;
+        alerta.fire({
+            title: 'Error',
+            icon: 'error',
+            text: `El campo ${inp} no tiene un formato válido.`,
             confirmButtonColor: '#004b93',
         });
         return false;
