@@ -3,13 +3,13 @@ const oferta = [
         2: {
             1: {
                 101: {
-                    "1 ": "Administración",
+                    "1": "Administración",
                     "14": "Contaduría Pública",
                     "15": "Derecho",
                     "33": "Psicología Social"
                 },
                 102: {
-                    "1 " : "Administración",
+                    "1" : "Administración",
                     "2 " : "Administración de Empresas Turísticas",
                     "10" : "Comercio Internacional y Aduanas",
                     "11" : "Comunicación",
