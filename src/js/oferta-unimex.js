@@ -10,7 +10,7 @@ const oferta = [
                 },
                 102: {
                     "1" : "Administración",
-                    "2 " : "Administración de Empresas Turísticas",
+                    "2" : "Administración de Empresas Turísticas",
                     "10" : "Comercio Internacional y Aduanas",
                     "11" : "Comunicación",
                     "14" : "Contaduría Pública",
