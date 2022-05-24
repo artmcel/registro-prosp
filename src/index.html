@@ -53,7 +53,7 @@
           <div id="emailHelp" class="form-text">Ejemplo: tucorreo@dominio.com</div>
         </div>
         <div class="row mb-3">
-          <label for="telefono" class="form-label">TELEFONOS DE CONTACTO</label>
+          <label for="telefono" class="form-label">TELÉFONOS DE CONTACTO</label>
           <div class="col-6">
             <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name" maxlength="10" pattern="[0-9]{10}" required>
             <div id="telefonoHelp" class="form-text">Número a 10 dígitos</div>
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="row mb-3">
-          <label for="" class="form-label">QUIERO ESTUDIAR EN</label>
+          <label for="" class="form-label">QUIERO ESTUDIAR EN:</label>
           <div class="col-6">
             <select class="form-select" aria-label="" id="plantel">
               <option value="0">Selecciona Plantel</option>
@@ -95,9 +95,12 @@
             <option value="0">Selecciona Carrera</option>
           </select>
         </div>
-        <div id="aviso" class="d-grid gap-2 col-6 mx-auto mb-3">
-          <p class="">He leido y acepto el <a href="https://unimex.edu.mx/aviso-privacidad" target="_blank"
-              rel="noopener noreferrer">aviso de privacidad</a></p>
+        <div id="aviso" class="form-check gap-2 col-6 mx-auto mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">
+            He leído y acepto el <a href="https://unimex.edu.mx/aviso-privacidad" target="_blank" rel="noopener noreferrer">aviso de privacidad</a>
+          </label>
+
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
           <button id="boton" class="btn btn-primary btn-block" type="submit">ENVIAR</button>
@@ -113,7 +116,7 @@
 
   <footer class="mt-3">
 
-    <p>UNIVERSIDAD MEXICANA &COPY;</p>
+    <p>UNIVERSIDAD MEXICANA &reg;</p>
   </footer>
 
 
