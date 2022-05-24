@@ -9,26 +9,28 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
  * request url
  */
 
+//echo $metod;
+
 $url = $_GET['obtener'];
+$method = $_SERVER['REQUEST_METHOD'];
 
 $guardaDatos = function( $args= array() ){
-
+    
     //echo json_encode($args);
     require('./service.php');
     $ws = new Registro();
     $resultado = $ws->agregaProspecto( $args );
     echo json_encode($resultado);
     
-
+    
 };
 
-if( $url == "guardaDatos" ){
+
+if( $url == "guardaDatos" && ( ($method == 'OPTIONS') || ($method == 'POST')) ){
     
     $recibeJson = json_decode(file_get_contents('php://input'), false);
     $datos      = (array)$recibeJson;
-
     if($datos['url'] == '') $datos['url'] = 11;
-
     if( !empty($datos['utm_source']) || !empty($datos['utm_campaign']) || !empty($datos['utm_medium']) || !empty($datos['utm_id']) || !empty($datos['utm_content']) ) {
         $datos['utm_source']= $datos['utm_source'];
         $datos['utm_campaign']= $datos['utm_campaign'];
@@ -46,7 +48,7 @@ if( $url == "guardaDatos" ){
 
     $args = array(
 
-	    'pNombre'           => $datos['nombre'],
+        'pNombre'           => $datos['nombre'],
         'pApPaterno'        => $datos['apaterno'],
         'pApMaterno'        => $datos['amaterno'],
         'pTelefono'         => $datos['telefono'],
@@ -68,6 +70,9 @@ if( $url == "guardaDatos" ){
     //print_r($args);
     $guardaDatos($args);
 
+}else {
+    //echo "Hello Stranger";
+    header("HTTP/1.0 404 Not Found");
 }
 
 
