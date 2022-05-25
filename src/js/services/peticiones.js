@@ -7,7 +7,8 @@
  */
 
 //const url = `http://192.168.1.123/sidetrack/php/peticiones.php`;
-const url = 'http://192.168.1.123/registro/php/peticiones.php';
+const url = './php/peticiones';
+//const url = 'http://192.168.1.123/registro/php/peticiones.php';
 
 export const guardarDatos = async ( datos ) => {
 
