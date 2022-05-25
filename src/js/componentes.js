@@ -143,7 +143,7 @@ const enviarDatos = async ( datos ) => {
     
                         const alerta = module.default;
                         alerta.fire({
-                            title: 'Exito',
+                            title: 'Registro Exitoso',
                             icon: 'success',
                             text: 'En breve uno de nuestro asesores se pondrá en contacto contigo para brindarte una atención puntual y personalizada',
                             confirmButtonColor: '#004b93',
