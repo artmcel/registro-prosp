@@ -20,6 +20,9 @@ body, html{
     background-image: url(./assets/img/FONDO.JPG);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
 }
 
 header{
@@ -80,6 +83,10 @@ header{
     font-weight: bold;
     font-style: italic;
     color: #001e62;
+}
+
+#aviso{
+    text-align: center;
 }
 
 
@@ -166,6 +173,7 @@ footer{
     }
     #registro{
         width: 100%;
+        margin-top: 75px;
     }
     #logo{
         margin-left: auto;
@@ -183,6 +191,7 @@ footer{
     }
     #registro{
         width: 100%;
+        margin-top: 75px;
     }
     #logo{
         margin-left: auto;
@@ -229,6 +238,7 @@ footer{
     }
     #modelo{
         display: flex;
+        margin-top: 13px;
     }
     
 
@@ -250,6 +260,7 @@ footer{
     }
     #modelo{
         display: flex;
+        margin-top: -18px;
     }
     
 }
