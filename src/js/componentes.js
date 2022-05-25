@@ -1,11 +1,6 @@
 /**
  * logica del proyecto
  */
-
-/**
- * constantes...
- */
-
 const peticiones      = import( /* webpackChunkName: "peticiones" */ './services/peticiones'),
       Swal            = import(/*webpackPrefetch: true*/ 'sweetalert2'),
       oferta          = import( /* webpackChunkName: "oferta" */ './oferta-unimex'),
@@ -39,7 +34,6 @@ window.addEventListener('load', () => {
     });
     
 });
-
 
 let [plantel, nivel, periodo] = selects;
 
@@ -75,8 +69,6 @@ const agregaCarreraSelect = async( idPlantel, idNivel, idPeriodo) => {
     });
 
 };
-
-
 /**
  * 
  * logica del envio de informacion
@@ -85,8 +77,6 @@ const agregaCarreraSelect = async( idPlantel, idNivel, idPeriodo) => {
 boton.addEventListener('click', (e) => {
 
     e.preventDefault();
-
-    //let datos = {};
     // obtener informacion de los inputs..
     inputs.forEach(({ id, value }) => {
 
@@ -117,13 +107,8 @@ boton.addEventListener('click', (e) => {
 
     });
 
-    
-    //console.log(datos);
-    
-    
     enviarDatos(datos);
-    
-    
+
 });
 
 
@@ -133,28 +118,24 @@ const enviarDatos = async ( datos ) => {
         const respuesta = module.guardarDatos(datos);
         
         respuesta.then( respuesta => {
-            console.log(respuesta.status);
 
             if( respuesta.status === 'ok'){
 
+                Swal.then( module => {
 
-                    
-                    Swal.then( module => {
-    
-                        const alerta = module.default;
-                        alerta.fire({
-                            title: 'Registro Exitoso',
-                            icon: 'success',
-                            text: 'En breve uno de nuestro asesores se pondrá en contacto contigo para brindarte una atención puntual y personalizada',
-                            confirmButtonColor: '#004b93',
-                        }).then( ( result ) => {
-                            if(result.isConfirmed){
-                                
-                                window.location.href = './';
-                            }
-                        });
+                    const alerta = module.default;
+                    alerta.fire({
+                        title: 'Registro Exitoso',
+                        icon: 'success',
+                        text: 'En breve uno de nuestro asesores se pondrá en contacto contigo para brindarte una atención puntual y personalizada',
+                        confirmButtonColor: '#004b93',
+                    }).then( ( result ) => {
+                        if(result.isConfirmed){
+                            
+                            window.location.href = './';
+                        }
                     });
-    
+                });
             }
 
         });
