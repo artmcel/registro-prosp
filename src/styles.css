@@ -87,6 +87,12 @@ header{
 
 #aviso{
     text-align: center;
+    font-size: 15px;
+}
+
+#aviso > .form-check-input{
+    float: none;
+
 }
 
 
@@ -175,6 +181,13 @@ footer{
         width: 100%;
         margin-top: 75px;
     }
+    #img-ilustracion {
+        margin-top: -60px;
+        width: 120px;
+    }
+    #aviso{
+        font-size: 11px;
+    }
     #logo{
         margin-left: auto;
         margin-right: auto;
@@ -192,6 +205,13 @@ footer{
     #registro{
         width: 100%;
         margin-top: 75px;
+    }
+    #img-ilustracion {
+        margin-top: -75px;
+        width: 150px;
+    }
+    #aviso{
+        font-size: 13px;
     }
     #logo{
         margin-left: auto;
@@ -260,7 +280,7 @@ footer{
     }
     #modelo{
         display: flex;
-        margin-top: -18px;
+        margin-top: -112px;
     }
     
 }
@@ -280,7 +300,7 @@ footer{
     }
     #modelo{
         display: flex;
-        margin-top: -23px;
+        margin-top: -140px;
     }
     
 }
