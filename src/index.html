@@ -26,12 +26,12 @@
 
   <main class="container">
     <section id="registro" class="p-3 mb-5 bg-body rounded">
-      <div id="ilustracion">
-        <img id="img-ilustracion" src="assets/img/ilustracion.png" width="200" height="113" class="img-thumbnail rounded-circle" alt="ilustración">
+      <div id="ilustracion" class="text-center">
+        <img id="img-ilustracion" src="assets/img/ilustracion.png"  class="img-thumbnail img-fluid rounded-circle" alt="ilustración">
       </div>
       <div id="modelo"></div>
       <div id="mensaje-formulario" class="col-12 mt-3 p-3 text-center">
-        <h3>En este momento nuestro sitio web se encuentra en actualización, te solicitamos nos compartas tus datos en el siguiente formulario.</h3>
+        <h4>¡Hola!<br>En este momento nuestro sitio web se encuentra en actualización, por favor compártenos tus datos.</h4>
       </div>
       
       <form id="formulario" class="m-3 ps-3">
@@ -83,19 +83,23 @@
             </select>
           </div>
         </div>
-        <div class="mb-3">
-          <select class="form-select" aria-label="" id="periodo">
-            <option value="0">Iniciar Clases en:</option>
-            <option value="101">MAYO -  2022</option>
-            <option value="102">SEPTIEMBRE - 2022</option>
-          </select>
+        <div class="row mb-3">
+          <div class="col-6">
+            <select class="form-select" aria-label="" id="periodo">
+              <!--
+                <option value="0">Iniciar Clases en:</option>
+                <option value="101">MAYO -  2022</option>
+              -->
+              <option value="102">SEPTIEMBRE - 2022</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <select class="form-select" aria-label="" id="carrera" disabled>
+              <option value="0">Selecciona Carrera</option>
+            </select>
+          </div>
         </div>
-        <div class="mb-3">
-          <select class="form-select" aria-label="" id="carrera" disabled>
-            <option value="0">Selecciona Carrera</option>
-          </select>
-        </div>
-        <div id="aviso" class="form-check gap-2 col-6 mx-auto mb-3">
+        <div id="aviso" class="form-check gap-2 col-12 col-6 col-12 mx-auto mb-3">
           <input class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" checked>
           <label class="form-check-label" for="flexCheckChecked">
             He leído y acepto el <a href="https://unimex.edu.mx/aviso-privacidad" target="_blank" rel="noopener noreferrer">aviso de privacidad</a>
