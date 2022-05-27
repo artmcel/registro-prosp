@@ -128,7 +128,7 @@ const enviarDatos = async ( datos ) => {
                         title: 'Registro Exitoso',
                         icon: 'success',
                         text: 'En breve uno de nuestro asesores se pondrá en contacto contigo para brindarte una atención puntual y personalizada',
-                        confirmButtonColor: '#004b93',
+                        confirmButtonColor: '#f8981d',
                     }).then( ( result ) => {
                         if(result.isConfirmed){
                             
