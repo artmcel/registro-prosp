@@ -11,7 +11,7 @@
 
 <body>
 
-  <header class="mb-3 navbar">
+  <header class="navbar">
     <div class="container">
       <div id="logo" class="navbar-brand">
         <a href="https://unimex.edu.mx" target="_blank" rel="noopener noreferrer">
@@ -29,13 +29,13 @@
       <div id="ilustracion" class="text-center">
         <img id="img-ilustracion" src="assets/img/ilustracion.png"  class="img-thumbnail img-fluid rounded-circle" alt="ilustración">
       </div>
-      <div id="modelo"></div>
-      <div id="mensaje-formulario" class="col-12 mt-3 p-3 text-center">
+      <div id="modelo" class="col-4"></div>
+      <div id="mensaje-formulario" class="col-12 mt-1 text-center rounded">
         <h4>¡Hola!<br>En este momento nuestro sitio web se encuentra en actualización, por favor compártenos tus datos.</h4>
       </div>
       
       <form id="formulario" class="m-3 ps-3">
-        <label for="" class="form-label">NOMBRE</label>
+        <!--<label for="" class="form-label">NOMBRE</label>-->
         <div class="mb-3">
           <input id="nombre" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Last name" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]" required>
         </div>
@@ -48,18 +48,18 @@
           </div>
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">EMAIL</label>
+          <!--<label for="email" class="form-label">EMAIL</label>-->
           <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Last name" required>
           <div id="emailHelp" class="form-text">Ejemplo: tucorreo@dominio.com</div>
         </div>
         <div class="row mb-3">
-          <label for="telefono" class="form-label">TELÉFONOS DE CONTACTO</label>
+          <!--<label for="telefono" class="form-label">TELÉFONOS DE CONTACTO</label>-->
           <div class="col-6">
-            <input id="telefono" type="text" class="form-control" placeholder="Casa" aria-label="Last name" maxlength="10" pattern="[0-9]{10}" required>
+            <input id="telefono" type="text" class="form-control" placeholder="Teléfono Casa" aria-label="Last name" maxlength="10" pattern="[0-9]{10}" required>
             <div id="telefonoHelp" class="form-text">Número a 10 dígitos</div>
           </div>
           <div class="col-6">
-            <input id="celular" type="text" class="form-control" placeholder="Celular" aria-label="Last name" maxlength="10" pattern="[0-9]{10}">
+            <input id="celular" type="text" class="form-control" placeholder="Teléfono Celular" aria-label="Last name" maxlength="10" pattern="[0-9]{10}">
             <div id="celularHelp" class="form-text">Número a 10 dígitos</div>
           </div>
         </div>
