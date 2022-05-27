@@ -68,6 +68,7 @@ header{
 #img-ilustracion{
     height: auto;
     margin-top: -100px;
+    width: 130px;
 }
 
 #img-modelo{
@@ -77,6 +78,7 @@ header{
 
 #registro > #mensaje-formulario, #formulario{
     height: auto;
+    width: 95%;
 }
 
 #mensaje-formulario{
@@ -177,6 +179,27 @@ footer{
     header > .container{
         justify-content: center !important;
     }
+    #mensaje-formulario{
+        background-color: var(--azul-unimex);
+        color: white;
+        margin-left: 18px;
+        margin-right: 16px;
+        width: fit-content !important;
+        padding: 0.7px;
+
+        
+    }
+    #mensaje-formulario > h4{
+        font-size: 15px;
+    }
+    label{
+        font-size: 13px;
+    }
+    #formulario{
+        padding: 0 !important;
+        margin: auto;
+        width: auto;
+    }
     #registro{
         width: 100%;
         margin-top: 60px;
@@ -202,9 +225,29 @@ footer{
     header > .container{
         justify-content: center !important;
     }
+    #mensaje-formulario{
+        background-color: var(--azul-unimex);
+        color: white;
+        margin-left: 18px;
+        margin-right: 10px;
+        width: fit-content !important;
+        padding: 0.7px;
+
+        
+    }
+    #formulario{
+        padding: 0;
+        margin: auto;
+    }
     #registro{
         width: 100%;
         margin-top: 75px;
+    }
+    #mensaje-formulario > h4{
+        font-size: 15px;
+    }
+    label{
+        font-size: 13px;
     }
     #img-ilustracion {
         margin-top: -75px;
@@ -229,6 +272,22 @@ footer{
     header > .container{
         justify-content: center !important;
     }
+    #mensaje-formulario{
+        background-color: var(--azul-unimex);
+        color: white;
+        margin-left: 18px;
+        margin-right: 17px;
+        width: fit-content !important;
+        padding: 0.7px;
+
+        
+    }
+    #mensaje-formulario > h4{
+        font-size: 16px;
+    }
+    label{
+        font-size: 14px;
+    }
     #registro{
         width: 100%;
     }
@@ -248,9 +307,29 @@ footer{
     header > .container{
         justify-content: right !important;
     }
+    #mensaje-formulario{
+        background-color: var(--azul-unimex);
+        color: white;
+        margin-left: 31px;
+        margin-right: 10px;
+        width: fit-content !important;
+        padding: 0.7px;
+
+        
+    }
+    #mensaje-formulario > h4{
+        font-size: 18px;
+    }
+    label{
+        font-size: 14px;
+    }
     #registro{
         width: 50%;
         margin-left: calc(100%/3.5);
+    }
+    #img-ilustracion {
+        margin-top: -60px;
+        width: 120px;
     }
     #logo{
         margin-left: 0;
@@ -258,7 +337,8 @@ footer{
     }
     #modelo{
         display: flex;
-        margin-top: 13px;
+        margin-top: -85px;
+        max-height: 700px;
     }
     
 
@@ -270,9 +350,30 @@ footer{
     header > .container{
         justify-content: right !important;
     }
+    #mensaje-formulario{
+        background-color: var(--azul-unimex);
+        color: white;
+        margin-left: 31px;
+        margin-right: 10px;
+        width: fit-content !important;
+        padding: 0.7px;
+
+        
+    }
+    #mensaje-formulario > h4{
+        font-size: 1.4rem;
+    }
+    #img-ilustracion {
+        margin-top: -60px;
+        width: 120px;
+    }
+    label{
+        font-size: 14px;
+    }
     #registro{
         width: 50%;
         margin-left: calc(100%/3.5);
+        margin-top: 0;
     }
     #logo{
         margin-left: 0;
@@ -280,7 +381,8 @@ footer{
     }
     #modelo{
         display: flex;
-        margin-top: -112px;
+        margin-top: -168px;
+        max-height: 800px;
     }
     
 }
@@ -289,9 +391,30 @@ footer{
     header > .container{
         justify-content: right !important;
     }
+    #mensaje-formulario{
+        background-color: var(--azul-unimex);
+        color: white;
+        margin-left: 31px;
+        margin-right: 10px;
+        width: fit-content !important;
+        padding: 0.7px;
+
+        
+    }
+    #mensaje-formulario > h4{
+        font-size: 1.5rem;
+    }
+    #img-ilustracion {
+        margin-top: -60px;
+        width: 120px;
+    }
+    label{
+        font-size: 15px;
+    }
     #registro{
         width: 50%;
         margin-left: calc(100%/3.5);
+        margin-top: 0;
     }
     #logo{
         margin-left: 0;
@@ -300,7 +423,8 @@ footer{
     }
     #modelo{
         display: flex;
-        margin-top: -140px;
+        margin-top: -160px;
+        max-height: 770px;
     }
     
 }
