@@ -113,31 +113,22 @@ boton.addEventListener('click', (e) => {
 
 
 const enviarDatos = async ( datos ) => {
+
+    console.log(`Estos son tus datos que se envian al backend: ${datos}`);
     
-    await peticiones.then(module => {
-        const respuesta = module.guardarDatos(datos);
-        
-        respuesta.then( respuesta => {
+    Swal.then( module => {
 
-            if( respuesta.status === 'ok'){
-
-                Swal.then( module => {
-
-                    const alerta = module.default;
-                    alerta.fire({
-                        title: 'Registro Exitoso',
-                        icon: 'success',
-                        text: 'En breve uno de nuestro asesores se pondrá en contacto contigo para brindarte una atención puntual y personalizada',
-                        confirmButtonColor: '#f8981d',
-                    }).then( ( result ) => {
-                        if(result.isConfirmed){
-                            
-                            window.location.href = './';
-                        }
-                    });
-                });
+        const alerta = module.default;
+        alerta.fire({
+            title: 'Registro Exitoso',
+            icon: 'success',
+            text: 'Revisa la consola para ver tus datos',
+            confirmButtonColor: '#f8981d',
+        }).then( ( result ) => {
+            if(result.isConfirmed){
+                
+                window.location.href = './';
             }
-
         });
     });
 
